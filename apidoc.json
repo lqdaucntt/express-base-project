@@ -1,0 +1,9 @@
+{
+  "name": "LIVEDREAM APIDOC",
+  "version": "1.0.0",
+  "description": "Livedream apidoc",
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}
