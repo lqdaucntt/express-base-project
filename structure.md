@@ -3,23 +3,27 @@
 # I. Mô hình được sử dụng trong project.
 
 Mô hình được sử dụng trong project được tuỳ biến theo mô hình `MVC`. Đó là mô hình: `MRSCV`. Chúng tôi đã thêm `RS` vào giữa `MVC`. Cụ thể như sau:
-###1. M - Model:
+
+##1. M - Model:
 - Model: là một class(Object) chỉ chịu trách nhiệm chứa các schema, table và các base query để kết nối đến database. Chúng tôi không viết lệnh query trong các class model. Mà sẽ viết trong Repository(R)
-###2. R - Repository:
+
+##2. R - Repository:
 - Repository: là class(Object) sử dụng các model để tạo ra các query thao tác với database.
 - Vì sao chúng tôi lại không sử dụng model để viết trực tiếp các query. Bởi vì nếu như thế sẽ dẫn đến bị trùng lặp code.
-###3. S - Service:
+
+##3. S - Service:
 - Service: là class(Object) là nơi sẽ xử lý các logic của controller.<br>
 Khi cần thao tác với database sẽ gọi Repository để thao tác với database.<br>
 Bình thường chúng ta sẽ xử lý các logic trực tiếp trong controller.<br> 
 Nhưng như thế khi có những logic trùng lặp sẽ dẫn đến khó khăn.<br>
 Vì thế chúng tôi sẽ xử dụng Service để xử lý logic thay cho controller. 
-###4. C - Controller:
+
+##4. C - Controller:
 - Controller. là class(Object) là nơi sẽ tiếp nhận các request từ client hoặc từ view sau đó sẽ gọi Service xử lý logic cần thiết. <br>
  Sau đó sẽ trả kết quả cho Controller.<br> 
  Từ kết quả đó Controller sẽ trả dữ liệu cho client hoặc view.<br>
  
-###5. V - View
+##5. V - View
 - Hiện nay chúng tôi sẽ sử dụng Client - Server vì thế View chúng tôi sẽ không xử lý tại project này. <br>
 
 ## Sơ đồ mô hình: 
