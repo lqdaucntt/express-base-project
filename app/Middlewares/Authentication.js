@@ -34,15 +34,7 @@ class Authentication {
       return next(error);
     }
 
-    req.user = auth.value;
-
-    // Check token exist in token repo
-    const response = await this.tokeRepo.get({ userId: req.user.id, token});
-
-    if(!response) {
-      const error = errorCode.invalid_token;
-      return next(error);
-    }
+    // write your code...
 
     return next();
   }
@@ -71,15 +63,7 @@ class Authentication {
         return next(error);
       }
 
-      req.user = auth.value;
-
-      // Check token exist in token repo
-      const response = await this.tokeRepo.get({ userId: req.user.id, token});
-
-      if(!response) {
-        const error = errorCode.invalid_token;
-        return next(error);
-      }
+      // write your code...
 
       return next();
     }
@@ -113,21 +97,7 @@ class Authentication {
         return next(error);
       }
   
-      req.user = auth.value;
-
-      // Check token exist in token repo
-      const response = await this.tokeRepo.get({ userId: req.user.id, token});
-  
-      if(!response) {
-        const error = errorCode.invalid_token;
-        return next(error);
-      }
-  
-      // Check user is not an admin
-      if (req.user.role !== ROLE_USER.admin) {
-        const error = errorCode.user_not_permission;
-        return next(error);
-      }
+      // write your code.
 
       return next();
     } catch(e) {

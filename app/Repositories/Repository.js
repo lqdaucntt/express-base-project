@@ -1,5 +1,5 @@
 
-class BaseRepository {
+class Repository {
   constructor(Model) {
     this.model = Model;
     this.q = this.model.query();
@@ -7,7 +7,7 @@ class BaseRepository {
 
   /**
    * Khởi tạo query.
-   * @returns {BaseRepository}
+   * @returns {Repository}
    */
   query() {
     this.q = this.model.query();
@@ -135,7 +135,7 @@ class BaseRepository {
    * @param column
    * @param clause
    * @param value
-   * @returns {BaseRepository}
+   * @returns {Repository}
    */
   orWhere(column, clause = '=', value) {
     console.log(typeof column);
@@ -165,7 +165,7 @@ class BaseRepository {
    * whereNotIn function.
    * @param column
    * @param value
-   * @returns {BaseRepository}
+   * @returns {Repository}
    */
   whereNotIn(column, value) {
     this.q = this.q.whereNotIn(column, value);
@@ -175,7 +175,7 @@ class BaseRepository {
   /**
    * whereNotNull function.
    * @param column
-   * @returns {BaseRepository}
+   * @returns {Repository}
    */
   whereNotNull(column) {
     this.q = this.q.whereNotNull(column);
@@ -210,7 +210,7 @@ class BaseRepository {
   /**
    * orderByRaw function.
    * @param rawQuery
-   * @returns {BaseRepository}
+   * @returns {Repository}
    */
   orderByRaw(rawQuery) {
     this.q = this.q.orderByRaw(rawQuery);
@@ -220,7 +220,7 @@ class BaseRepository {
   /**
    * column function.
    * @param columns
-   * @returns {BaseRepository}
+   * @returns {Repository}
    */
   column(columns = '*') {
     this.q = this.q.column(columns);
@@ -303,4 +303,4 @@ class BaseRepository {
   }
 
 }
-module.exports = BaseRepository;
+module.exports = Repository;
