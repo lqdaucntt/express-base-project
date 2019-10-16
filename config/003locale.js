@@ -1,6 +1,5 @@
-/**
- * Created by daulq on 3/27/18.
- */
+'use strict';
+
 const i18n = require('i18n-2');
 const { app } = require('./001app');
 

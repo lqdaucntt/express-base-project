@@ -1,6 +1,5 @@
-/**
- * Created by daulq on 3/27/18.
- */
+'use strict';
+
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');

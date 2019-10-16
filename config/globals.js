@@ -1,6 +1,5 @@
-/**
- * Created by daulq on 3/8/18.
- */
+'use strict';
+
 const path = require('path');
 const fse = require('fs-extra');
 

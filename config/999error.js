@@ -1,6 +1,5 @@
-/**
- * Created by daulq on 3/27/18.
- */
+'use strict';
+
 const { app } = require('./001app');
 
 // catch 404 and forward to error handler
