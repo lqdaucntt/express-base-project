@@ -1,6 +1,5 @@
-/**
- * Created by daulq on 3/8/18.
- */
+'use strict';
+
 const Env = process.env;
 
 module.exports = {

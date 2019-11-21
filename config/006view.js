@@ -1,6 +1,5 @@
-/**
- * Created by daulq on 3/27/18.
- */
+'use strict';
+
 const path = require('path');
 const { app } = require('./001app');
 // view engine setup

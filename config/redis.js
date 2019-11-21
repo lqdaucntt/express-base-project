@@ -1,8 +1,7 @@
-// Third packages.
-const  asyncRedis = require('async-redis');
-const redis = require('redis');
+'use strict';
 
-// Modules.
+const asyncRedis = require('async-redis');
+const redis = require('redis');
 const { Env } = require('./index');
 
 const redisClient = asyncRedis.createClient({

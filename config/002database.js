@@ -1,6 +1,5 @@
-/**
- * Created by daulq on 3/9/18.
- */
+'use strict';
+
 const { Env } = require('./index');
 
 const databaseEngine = Env.DATABASE || 'mysql';

@@ -1,174 +1,79 @@
-/**
- * Created by daulq on 3/8/18.
- */
+'use strict';
 
 class Controller {
-
-  /**
-   * response for invalid requests
-   *
-   * @param res
-   * @param options
-   * @returns {*}
-   */
-  invalidResponse(res, options) {
-    let {
-      status,
-      data,
-      message,
-      error
-    } = options;
-
-    status = status || 400;
-    data = data || null;
-    message = message || 'bad_request';
-    error = error || 400;
-
-    return res.status(200).send({
-      status,
-      data,
-      message,
-      error
-    });
-  }
-
   /**
    * response for another error requests
-   *
    * @param res
    * @param options
    * @returns {*}
    */
-  errorResponse(res, options) {
-    let {
-      status,
-      data,
-      message,
-      error
-    } = options;
-
-    status = status || 400;
-    data = data || null;
-    message = message || 'bad_request';
-    error = error || 400;
-
-    return res.status(200).send({
-      status,
-      data,
-      message,
-      error
+  errorResponse (res, options) {
+    return res.status(400).send({
+      status: options.status || 400,
+      data: options.data || null,
+      message: options.message || 'bad_request',
+      error: options.error || 400,
     });
   }
 
   /**
    * response for success requests
-   *
    * @param res
    * @param options
    * @returns {*}
    */
-  successResponse(res, options) {
-    let {
-      status,
-      data,
-      message,
-      error
-    } = options;
-
-    status = status || 200;
-    data = data || null;
-    message = message || 'success';
-    error = 0;
-
-    return res.status(status).send({
-      status,
-      data,
-      message,
-      error
+  successResponse (res, options) {
+    return res.status(200).send({
+      status: options.status || 200,
+      data: options.data || null,
+      message: options.message || 'success',
+      error: 0,
     });
   }
 
   /**
    * response for create requests
-   *
    * @param res
    * @param options
    * @returns {*}
    */
-  createdResponse(res, options) {
-    let {
-      status,
-      data,
-      message,
-      error
-    } = options;
-
-    status = status || 201;
-    data = data || null;
-    message = message || 'success';
-    error = 0;
-
-    return res.status(status).send({
-      status,
-      data,
-      message,
-      error
+  createdResponse (res, options) {
+    return res.status(201).send({
+      status: options.status || 201,
+      data: options.status || 201,
+      message: options.message || 'success',
+      error: 0,
     });
   }
 
   /**
    * response when server error
-   *
    * @param res
    * @param options
    * @returns {*}
    */
-  errorServerResponse(res, options) {
-    let {
-      status,
-      data,
-      message,
-      error
-    } = options;
-
-    status = status || 500;
-    data = data || null;
-    message = message || 'error_server';
-    error = 500;
-
-    return res.status(200).send({
-      status,
-      data,
-      message,
-      error
+  systemErrorResponse (res, options) {
+    return res.status(500).send({
+      status: options.status || 500,
+      data: options.data || null,
+      message: options.message || 'system_error',
+      error: 500,
     });
   }
 
   /**
-   * responseSuccess function.
+   * unauthorized response
    * @param res
-   * @param response
-   * @returns {*}
+   * @param options
+   * @returns {*|Socket|Namespace|void}
    */
-  responseSuccess(res, response) {
-    if(response.error) {
-      return this.errorResponse(res, response);
-    }
-    return this.successResponse(res, response);
-  }
-
-  /**
-   * createSuccess function.
-   * @param res
-   * @param response
-   * @returns {*}
-   */
-  createSuccess(res, response) {
-    if(response.error) {
-      return this.errorResponse(res, response);
-    }
-
-    return this.createdResponse(res, response);
+  unauthorizedResponse (res, options) {
+    return res.status(401).send({
+      status: options.status || 401,
+      data: options.data || null,
+      message: options.message || 'unauthorized_request',
+      error: 500,
+    });
   }
 }
 

@@ -1,4 +1,5 @@
-// Modules
+'use strict';
+
 const { http } = require('./001app');
 
 // Third packages.
@@ -12,10 +13,7 @@ const io = require('socket.io')(http, options);
 
 (() => {
   try {
-
-    // Connect socket.
-    io.on('connect', async (socket) => {
-     });
+    io.on('connect', async (socket) => {});
   } catch (e) {
     console.log(e);
   }
